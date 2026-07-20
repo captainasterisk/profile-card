@@ -22,12 +22,12 @@ export default ((opts?: ProfileCardOptions) => {
   const { name, image, imageAlt } = { ...getProfileCardOptions(), ...opts };
 
   const ProfileCard: QuartzComponent = () => (
-    <section class="profile-card" aria-label={name}>
-      <p class="profile-card__name">{name}</p>
+    <div class="profile-card" aria-label={name}>
+      <span class="profile-card-name">{name}</span>
       {image ? (
-        <img class="profile-card__image" src={image} alt={imageAlt ?? name} loading="lazy" />
+        <img class="profile-card-avatar" src={image} alt={imageAlt ?? name} />
       ) : null}
-    </section>
+    </div>
   );
 
   ProfileCard.css = style;

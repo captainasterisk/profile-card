@@ -214,8 +214,7 @@ UI elements for Quartz layouts. This package provides `ProfileCard`.
 
 ```tsx
 import type { QuartzComponent, QuartzComponentConstructor } from "@quartz-community/types";
-import style from "./styles/example.scss";
-import script from "./scripts/example.inline.ts";
+import style from "./styles/my-component.scss";
 
 export default ((opts?: MyComponentOptions) => {
   const Component: QuartzComponent = (props) => {
@@ -223,7 +222,6 @@ export default ((opts?: MyComponentOptions) => {
   };
 
   Component.css = style;
-  Component.afterDOMLoaded = script;
 
   return Component;
 }) satisfies QuartzComponentConstructor;
@@ -283,8 +281,6 @@ Component scripts run in the browser and must handle Quartz's SPA navigation. Ke
 3. **Listen to `prenav` event** - Fires before navigation, use for saving state
 4. **Use `window.addCleanup()`** - Register cleanup functions for event listeners
 5. **Use `fetchData` global** - Access page metadata via the `fetchData` promise (handles base path correctly)
-
-See `src/components/scripts/example.inline.ts` for a complete example with all patterns.
 
 ### Common Helper Functions
 

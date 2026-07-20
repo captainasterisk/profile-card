@@ -13,7 +13,7 @@ function getProfileCardOptions() {
 }
 
 // src/components/styles/profile-card.scss
-var profile_card_default = ".profile-card {\n  box-sizing: border-box;\n  width: 100%;\n  max-width: 180px;\n  color: var(--dark);\n}\n\n.profile-card__name {\n  margin: 0 0 12px;\n  color: var(--darkgray);\n  font-size: 0.65rem;\n  font-weight: 600;\n  line-height: 1.2;\n  text-transform: uppercase;\n}\n\n.profile-card__image {\n  display: block;\n  width: 100%;\n  aspect-ratio: 1/1;\n  object-fit: cover;\n  border-radius: 4px;\n}\n\n@media all and (max-width: 800px) {\n  .profile-card {\n    max-width: none;\n  }\n}";
+var profile_card_default = ".profile-card {\n  box-sizing: border-box;\n  width: 100%;\n  max-width: 180px;\n  color: var(--dark);\n}\n\n.profile-card-name {\n  margin: 0 0 12px;\n  color: var(--darkgray);\n  font-size: 0.65rem;\n  font-weight: 600;\n  line-height: 1.2;\n  text-transform: uppercase;\n}\n\n.profile-card-avatar {\n  display: block;\n  width: 100%;\n  aspect-ratio: 1/1;\n  object-fit: cover;\n  border-radius: 4px;\n}\n\n@media all and (max-width: 800px) {\n  .profile-card {\n    max-width: none;\n  }\n}";
 var l;
 l = { __e: function(n2, l2, u3, t2) {
   for (var i2, o2, r2; l2 = l2.__; ) if ((i2 = l2.__c) && !i2.__) try {
@@ -38,9 +38,9 @@ function u2(e2, t2, n2, o2, i2, u3) {
 // src/components/ProfileCard.tsx
 var ProfileCard_default = ((opts) => {
   const { name, image, imageAlt } = { ...getProfileCardOptions(), ...opts };
-  const ProfileCard = () => /* @__PURE__ */ u2("section", { class: "profile-card", "aria-label": name, children: [
-    /* @__PURE__ */ u2("p", { class: "profile-card__name", children: name }),
-    image ? /* @__PURE__ */ u2("img", { class: "profile-card__image", src: image, alt: imageAlt ?? name, loading: "lazy" }) : null
+  const ProfileCard = () => /* @__PURE__ */ u2("div", { class: "profile-card", "aria-label": name, children: [
+    /* @__PURE__ */ u2("span", { class: "profile-card-name", children: name }),
+    image ? /* @__PURE__ */ u2("img", { class: "profile-card-avatar", src: image, alt: imageAlt ?? name }) : null
   ] });
   ProfileCard.css = profile_card_default;
   return ProfileCard;
