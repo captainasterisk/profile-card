@@ -52,11 +52,11 @@ export interface ExampleEmitterOptions {
   manifestScriptClass?: string;
 }
 
-export interface ExampleComponentOptions {
-  /** Text to prefix before the title */
-  prefix?: string;
-  /** Text to suffix after the title */
-  suffix?: string;
-  /** CSS class name to apply */
-  className?: string;
+export interface ProfileCardOptions {
+  /** The label displayed above the profile image. */
+  name: string;
+  /** URL or Quartz static path for the profile image. */
+  image: string;
+  /** Accessible description of the profile image. Defaults to the name. */
+  imageAlt?: string;
 }

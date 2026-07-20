@@ -94,28 +94,32 @@
     "vitest": "^2.1.9"
   },
   "quartz": {
-    "name": "plugin-template",
-    "displayName": "Plugin Template",
-    "category": "transformer",
+    "name": "profile-card",
+    "displayName": "Profile Card",
+    "category": "component",
     "version": "1.0.0",
     "quartzVersion": ">=5.0.0",
     "dependencies": [],
     "defaultOrder": 50,
     "defaultEnabled": true,
-    "defaultOptions": {},
+    "defaultOptions": {
+      "name": "Profile",
+      "image": ""
+    },
     "optionSchema": {
-      "highlightToken": {
-        "type": "enum",
-        "values": [
-          "==",
-          "**",
-          "~~"
-        ]
+      "name": {
+        "type": "string"
+      },
+      "image": {
+        "type": "string"
+      },
+      "imageAlt": {
+        "type": "string"
       }
     },
     "components": {
-      "ExampleComponent": {
-        "displayName": "Example Component",
+      "ProfileCard": {
+        "displayName": "Profile Card",
         "defaultPosition": "right",
         "defaultPriority": 50
       }

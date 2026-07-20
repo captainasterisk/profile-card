@@ -35,6 +35,31 @@ The template is configured to bundle all dependencies by default via `noExternal
 
 ## Usage in Quartz
 
+### Profile card
+
+Place your image in your Quartz site's `static/` folder and configure the card in
+`quartz.config.yaml`:
+
+```yaml
+plugins:
+  - source: github:your-username/profile-card
+    enabled: true
+    options:
+      name: "Captain Asterisk"
+      image: "/static/captain-asterisk.png"
+      imageAlt: "Captain Asterisk wearing glasses"
+```
+
+Then add the component to a layout. It uses those config values automatically:
+
+```ts
+import { ProfileCard } from "@quartz-community/profile-card";
+
+export const right = [ProfileCard()];
+```
+
+It renders a small uppercase name and a square, rounded image, sized for the right sidebar.
+
 Install your plugin into a Quartz v5 site:
 
 ```bash
@@ -183,7 +208,7 @@ repository secrets.
 ## Component Plugins (UI Components)
 
 In addition to transformer/filter/emitter plugins, you can create **component plugins** that provide
-UI elements for Quartz layouts. See `src/components/ExampleComponent.tsx` for a reference.
+UI elements for Quartz layouts. This package provides `ProfileCard`.
 
 ### Component Pattern
 
